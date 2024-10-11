@@ -28,7 +28,7 @@ for text_file in text_files:
     print(f"Created directory: {directory}")
 
     # Read the URLs from the text file
-    with open(text_file, "r") as file:
+    with open(text_file, "r", encoding='utf-8') as file:
         urls = file.read().splitlines()
 
     # Find the index of the last downloaded file, if it exists in the current text file

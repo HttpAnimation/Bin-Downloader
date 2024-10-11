@@ -22,7 +22,7 @@ for text_file in text_files:
     os.makedirs(directory, exist_ok=True)
     print(f"Created directory: {directory}")
 
-    with open(text_file, "r") as file:
+    with open(text_file, "r", encoding='utf-8') as file:
         urls = file.read().splitlines()
 
     if last_downloaded and last_downloaded in urls:
