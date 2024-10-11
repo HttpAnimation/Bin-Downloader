@@ -15,7 +15,7 @@ text_files = ["audio.txt", "documents.txt", "photo.txt", "videos.txt", "devices.
 
 # Read the last downloaded file from 'last_downloaded.txt' if it exists
 if os.path.exists("last_downloaded.txt"):
-    with open("last_downloaded.txt", "r") as file:
+    with open("last_downloaded.txt", "r", encoding='utf-8') as file:
         last_downloaded = file.read().strip()
 else:
     last_downloaded = ""
@@ -50,7 +50,7 @@ for text_file in text_files:
             break
 
         # Save the last downloaded file to 'last_downloaded.txt'
-        with open("last_downloaded.txt", "w") as file:
+        with open("last_downloaded.txt", "w", encoding='utf-8') as file:
             file.write(url)
 
         if i < total_files - 1:

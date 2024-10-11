@@ -12,7 +12,7 @@ def download_file(url, directory):
 text_files = ["photo.txt"]
 
 if os.path.exists("last_downloaded.txt"):
-    with open("last_downloaded.txt", "r") as file:
+    with open("last_downloaded.txt", "r", encoding='utf-8') as file:
         last_downloaded = file.read().strip()
 else:
     last_downloaded = ""
@@ -41,7 +41,7 @@ for text_file in text_files:
             print(f"Error downloading file {i+1}/{total_files}: {e}")
             break
 
-        with open("last_downloaded.txt", "w") as file:
+        with open("last_downloaded.txt", "w", encoding='utf-8) as file:
             file.write(url)
 
         if i < total_files - 1:
